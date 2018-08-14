@@ -21,6 +21,28 @@
   version = "v1.3.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:4bed89d3dccf4735fa7e200ee495e94818a5c69ba07ab72806e80dc3d3b11b04"
+  name = "github.com/golang/groupcache"
+  packages = [
+    ".",
+    "consistenthash",
+    "groupcachepb",
+    "lru",
+    "singleflight",
+  ]
+  pruneopts = "UT"
+  revision = "24b0969c4cb722950103eed87108c8d291a8df00"
+
+[[projects]]
+  digest = "1:15042ad3498153684d09f393bbaec6b216c8eec6d61f63dff711de7d64ed8861"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  pruneopts = "UT"
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
+
+[[projects]]
   digest = "1:43dd08a10854b2056e615d1b1d22ac94559d822e1f8b6fcc92c1a1057e85188e"
   name = "github.com/gorilla/websocket"
   packages = ["."]
@@ -34,6 +56,7 @@
   input-imports = [
     "github.com/garyburd/redigo/redis",
     "github.com/go-sql-driver/mysql",
+    "github.com/golang/groupcache",
     "github.com/gorilla/websocket",
   ]
   solver-name = "gps-cdcl"
