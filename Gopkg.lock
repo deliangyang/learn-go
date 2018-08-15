@@ -21,23 +21,17 @@
   version = "v1.3.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:4bed89d3dccf4735fa7e200ee495e94818a5c69ba07ab72806e80dc3d3b11b04"
-  name = "github.com/golang/groupcache"
-  packages = [
-    ".",
-    "consistenthash",
-    "groupcachepb",
-    "lru",
-    "singleflight",
-  ]
-  pruneopts = "UT"
-  revision = "24b0969c4cb722950103eed87108c8d291a8df00"
-
-[[projects]]
-  digest = "1:15042ad3498153684d09f393bbaec6b216c8eec6d61f63dff711de7d64ed8861"
+  digest = "1:daf100a9bfaffc8253fc8b1a0bf5ccdb9a278adce032938d1209b6cea2539888"
   name = "github.com/golang/protobuf"
-  packages = ["proto"]
+  packages = [
+    "proto",
+    "protoc-gen-go",
+    "protoc-gen-go/descriptor",
+    "protoc-gen-go/generator",
+    "protoc-gen-go/generator/internal/remap",
+    "protoc-gen-go/grpc",
+    "protoc-gen-go/plugin",
+  ]
   pruneopts = "UT"
   revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
   version = "v1.1.0"
@@ -56,7 +50,7 @@
   input-imports = [
     "github.com/garyburd/redigo/redis",
     "github.com/go-sql-driver/mysql",
-    "github.com/golang/groupcache",
+    "github.com/golang/protobuf/protoc-gen-go",
     "github.com/gorilla/websocket",
   ]
   solver-name = "gps-cdcl"
