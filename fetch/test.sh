@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-scp main.go root@www.ydl.com:/root
-ssh root@www.ydl.com "cd /root && go run main.go"
+scp url.go root@www.ydl.com:/root
+ssh root@www.ydl.com "cd /root && go run url.go https://www.baidu.com https://www.sourcedev.cc"
