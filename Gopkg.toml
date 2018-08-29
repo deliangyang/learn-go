@@ -52,3 +52,19 @@
 [[constraint]]
   name = "github.com/go-redis/redis"
   version = "6.13.2"
+
+[[constraint]]
+  name = "github.com/fsnotify/fsnotify"
+  version = "1.2.11"
+
+[[constraint]]
+  name = "github.com/go-chi/chi"
+  version = "3.3.2"
+
+[[constraint]]
+  name = "github.com/githubnemo/CompileDaemon"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/tealeg/xlsx"
+  version = "1.0.3"
