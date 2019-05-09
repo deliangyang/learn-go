@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	db, err := sql.Open("mysql", "michong:michong@tcp(192.168.1.34:3306)/haochang_api?charset=utf8mb4")
+	db, err := sql.Open("mysql", "xxx:xxxx@tcp(192.168.1.34:3306)/xxx_api?charset=utf8mb4")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(-1)
