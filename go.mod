@@ -1,4 +1,4 @@
-module github.com/deliangyang/hello-test
+module github.com/deliangyang/learn-go
 
 require (
 	cloud.google.com/go v0.39.0 // indirect
