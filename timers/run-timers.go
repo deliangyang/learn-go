@@ -17,8 +17,7 @@ func main() {
 		fmt.Println("timer 2 expired")
 	}()
 
-	stop2 := timer2.Stop()
-	if stop2 {
+	if stop2 := timer2.Stop(); stop2 {
 		fmt.Println("timer 2 stoped")
 	}
 
