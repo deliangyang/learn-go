@@ -30,6 +30,10 @@ func main() {
 		}
 	}())
 
+	a := []int{2, 3, 4,  }
+	l := len(a)
+	fmt.Println(a[l-2:])
+
 }
 
 func test() func() error {

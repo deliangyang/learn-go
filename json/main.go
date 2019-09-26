@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"golang.org/x/sync/singleflight"
+	"strings"
 )
 
 type response struct {
@@ -10,11 +12,33 @@ type response struct {
 	Fruits []string `json:"fruits"`
 }
 
-func main() {
-	res := &response{
-		Page: 1,
-		Fruits: []string {"apple", "peach", "pear"},
+func (r response) MarshalJSON() ([]byte, error) {
+	if r.Fruits == nil {
+		return []byte("{}"), nil
 	}
-	res2, _ := json.Marshal(res)
-	fmt.Println(string(res2))
+	root := make(map[string]interface{})
+
+	root["page"] = r.Page
+	root["Fruits"] = strings.Join(r.Fruits, "+")
+
+	return json.Marshal(root)
+}
+
+
+func main() {
+	var a = []interface{}{1, 2, 3, 5}
+	params := strings.Repeat("%P", len(a))
+	fmt.Println(fmt.Sprintf(params, a...))
+
+	var g singleflight.Group
+	v, err, _ := g.Do("key", func() (interface{}, error) {
+		return "bar", nil
+	})
+	fmt.Println(v)
+	if got, want := fmt.Sprintf("%v (%T)", v, v), "bar (string)"; got != want {
+		fmt.Println(fmt.Sprintf("Do = %v; want %v", got, want))
+	}
+	if err != nil {
+		fmt.Println(fmt.Sprintf("Do error = %v", err))
+	}
 }
